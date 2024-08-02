@@ -26,6 +26,7 @@ request.onload = function() {
   // "Description is not working properly as it is not a normal text field (somehow works on reload)
   //grocyValues['description'] = foodFacts['generic_name_' + language];
   //Total calories for whole paket (often not correct, e.g. if it is something that needs to be prepared)
+	grocyValues['qu_id_stock'] = (foodFacts['product_quantity_unit'] === 'g') ? '4' : '5';
   grocyValues['calories'] = foodFacts['product_quantity'] / foodFacts['serving_quantity'] * foodFacts['nutriments']['energy-kcal_serving'];
   grocyValues['tare_weight'] = foodFacts['product_quantity'];
   
@@ -33,5 +34,4 @@ request.onload = function() {
     document.getElementById(key).value=grocyValues[key];
   }
 }
-
 
